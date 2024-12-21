@@ -1,0 +1,16 @@
+﻿<Window x:Class="seryiPraktika.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Главное окно" Height="350" Width="300">
+
+    <DockPanel>
+    <Menu Background= "Lavender" DockPanel.Dock="Top">
+            <MenuItem Header="Категории" Click="Categories_Click" />
+            <MenuItem Header="Продукция" Click="Products_Click" />
+            <MenuItem Header="Платежи" Click="Payments_Click" />
+            <MenuItem Header="Отчет" Click="Report_Click" />
+        </Menu>
+
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" />
+            </DockPanel>
+</Window>

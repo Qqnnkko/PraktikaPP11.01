@@ -1,0 +1,38 @@
+﻿<Page x:Class="seryiPraktika.PaymentsWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Платежи"
+      Background="AliceBlue">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button Content="+" Width="30" Margin="5" Click="AddPayment_Click"/>
+            <Button Content="-" Width="30" Margin="5" Click="DeletePayment_Click"/>
+
+            <DatePicker x:Name="StartDatePicker" Width="120" Margin="10,5,5,5"/>
+            <DatePicker x:Name="EndDatePicker" Width="120" Margin="5"/>
+            <Button Content="Применить фильтр" Width="120" Margin="10,5,5,5" Click="ApplyDateFilter_Click"/>
+
+            <ComboBox x:Name="CategoryFilterComboBox" Width="150" Margin="10,5,5,5"
+                      DisplayMemberPath="category_name"
+                      SelectedValuePath="id"
+                      SelectionChanged="CategoryFilterComboBox_SelectionChanged"/>
+        </StackPanel>
+
+        <ListView x:Name="PaymentsListView" Grid.Row="1" Margin="0,10,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название платежа" DisplayMemberBinding="{Binding prodact.name_prod}" Width="200"/>
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding count}" Width="80"/>
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding price}" Width="80"/>
+                    <GridViewColumn Header="Сумма" DisplayMemberBinding="{Binding sum}" Width="100"/>
+                    <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding date}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>
